@@ -281,7 +281,7 @@ export default class extends React.Component<IProps, IState> {
       return;
     }
 
-    const {location, radius, bounds, types, country} = this.props;
+    const {strictbounds, location, radius, bounds, types, country} = this.props;
 
     /* tslint:disable:curly */
     if (location) options.location = location;
@@ -289,6 +289,7 @@ export default class extends React.Component<IProps, IState> {
     if (bounds) options.bounds = bounds;
     if (types) options.types = types;
     if (country) options.componentRestrictions = {country};
+    if (strictbounds) options.strictbounds = strictbounds;
     /* tslint:enable:curly */
 
     this.setState({isLoading: true}, () => {
